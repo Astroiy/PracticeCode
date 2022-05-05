@@ -1,4 +1,4 @@
-package Addition;
+package DataSimulation;
 
 import java.util.Random;
 
@@ -62,7 +62,7 @@ public class ReturnGrades {
     }
     public static class Test{
         public static void main(String[] args) throws InvalidGenderException {
-            getGrades(5);
+            getGrades(100);
         }
     }
 }

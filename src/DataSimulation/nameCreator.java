@@ -1,7 +1,5 @@
-package Addition;
+package DataSimulation;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.Random;
 
 public class nameCreator {
@@ -18,13 +16,13 @@ public class nameCreator {
             int count = rand.nextInt(1,3);
             int origin = rand.nextInt(494);
             String fn1 = firstname1.substring(2*origin,2*origin+count);
-            return ln+fn1+"M";
+            return ln+fn1+"F";
         }
         else if(gender == 1){
             int count = rand.nextInt(1,3);
             int origin = rand.nextInt(426);
             String fn2 = firstname2.substring(2*origin,2*origin+count);
-            return ln+fn2+"F";
+            return ln+fn2+"M";
         }
         else throw new InvalidGenderException();
     }
