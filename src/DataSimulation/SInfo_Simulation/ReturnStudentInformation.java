@@ -1,9 +1,9 @@
-package DataSimulation;
+package DataSimulation.SInfo_Simulation;
 
 import java.util.Random;
 
 public class ReturnStudentInformation {
-    public static String[][] getInfo(int n) throws InvalidGenderException{
+    public static String[][] getInfo(int n) throws InvalidGenderException {
         Random rand = new Random();
         String[][] info = new String[n][3];
 

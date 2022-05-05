@@ -1,4 +1,6 @@
-package DataSimulation;
+package DataSimulation.SGrade_Simulation;
+
+import DataSimulation.SInfo_Simulation.*;
 
 import java.util.Random;
 

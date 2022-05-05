@@ -1,4 +1,5 @@
-package DataSimulation;
+package DataSimulation.SC_Simulation.Version1;
+
 import java.util.*;
 
 public class ReturnStudentCourse {
@@ -6,7 +7,6 @@ public class ReturnStudentCourse {
         Random rand = new Random();
         ArrayList<Integer> course = new ArrayList<Integer>(Arrays.asList(666001,666002,666003,666004,666005,666006,
                 666007,666008));
-        int m = course.size();
         LinkedHashSet<SCArray> result = new LinkedHashSet<SCArray> ();
 
         for(int i=0;i<n;i++){

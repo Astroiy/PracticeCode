@@ -1,4 +1,4 @@
-package DataSimulation;
+package DataSimulation.SInfo_Simulation;
 
 import java.util.Random;
 
@@ -40,4 +40,4 @@ public class nameCreator {
     }
 }
 
-class InvalidGenderException extends Exception{}
+
