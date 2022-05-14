@@ -23,5 +23,6 @@ public class YHTriangle {
                 System.out.printf("%4d",col);
             System.out.println();
         }
+        System.out.println(Arrays.deepToString(Tri));
     }
 }

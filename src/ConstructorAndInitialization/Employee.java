@@ -3,36 +3,39 @@ package ConstructorAndInitialization;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee {
-    private String name;
+public class Employee extends Person{
+    /**Employee对象的实例域*/
+   // private String name;
     private double salary;
     private LocalDate hireday;
 
-    private static int nextId;
-    private int id;
+
+
+    /**Employee类的构造器*/
+    public Employee(){};
     public Employee(String name){
-        this.name = name;
+        super(name);
     };
     public Employee(String name,double salary,LocalDate hireday){
+        super(name);
         if(name==null)
-            this.name="unknown";
+           this.setName("unknown");
         else
-            this.name = name;
+           this.setName(name);
         this.salary=salary;
-
         this.hireday = Objects.requireNonNull(hireday,"The hireday cannot be null");
 
     }
     public Employee(String name,double salary,int year,int month,int day){
 
-        this.name = Objects.requireNonNullElse(name,"unknown");
+        this.setName(Objects.requireNonNullElse(name,"unknown"));
         this.salary=salary;
         this.hireday=LocalDate.of(year,month,day);
     }
 
     public Employee(String name,double salary){
         this.salary = salary;
-        this.name = Objects.requireNonNullElse(name,"unknown");
+        this.setName(Objects.requireNonNullElse(name,"unknown"));
 
     }
     public Employee(double salary, LocalDate hireday){
@@ -40,17 +43,39 @@ public class Employee {
         this.hireday=hireday;
     }
 
-
-    public String getName(){return name;}
+    /**Employee类的访问器与变异器*/
     public double getSalary(){return salary;}
     public LocalDate getHireday(){return hireday;}
-    public int getId(){return id;}
     public void raiseSalary(double byPercent){
         double raise = salary*byPercent/100;
         salary+=raise;
     }
-     public String toString(){
-        return String.join(" ","Name:"+this.name,"Salary:"+String.valueOf(this.salary),"Hireday"+this.hireday.toString()+"\n");
+    /**Employee类的打印方法覆盖*/
+   public String toString(){
+       return getClass().getName()
+               + "[name=" + getName()
+               + ",salary=" + getSalary()
+               + ",hireDay="+ getHireday()
+               + "]";
+   }
+
+    protected String getDescription(){
+        return "an employee with a salary of "+this.getSalary();
+    }
+
+    public boolean equals(Object otherObject){
+        if(this == otherObject)
+            return true;
+        else if(otherObject == null)
+            return false;
+        else if(getClass()!=otherObject.getClass())
+            return false;
+        Employee other = (Employee) otherObject;
+        return Objects.equals(getName(),other.getName())&&Objects.equals(getHireday(),other.getHireday())&&(getSalary()==other.getSalary());
+    }
+
+    public int hashCode(){
+        return Objects.hash(getName(),salary,hireday);
     }
 
 }

@@ -8,7 +8,7 @@ public class ReturnStudentCourse3 {
     public static SCMap getSC(int n,int m,int l) throws OutOfBoundsException{
         if(n>=0 && (m>=0 && l<=8)){
             Random rand = new Random();
-           SCMap result = new SCMap();
+            SCMap result = new SCMap();
             for(int i=1;i<=n;i++) {
                 int scn = rand.nextInt(m, l + 1);
                 TreeSet<Integer> selected_course = new TreeSet<Integer>();

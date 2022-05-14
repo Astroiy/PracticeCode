@@ -14,5 +14,8 @@ public class TDArray {
                 for(int layer3: layer2)
                     System.out.print(layer3+" ");
 
+        System.out.println();
+        System.out.println(Arrays.deepToString(result));
+
     }
 }
