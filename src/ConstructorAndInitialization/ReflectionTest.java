@@ -1,11 +1,15 @@
 package ConstructorAndInitialization;
 
+import java.awt.event.ActionListener;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /**这个类用于打印输入类的域、构造器以及方法的具体信息。
  * @author Astroiy
@@ -13,7 +17,7 @@ import java.util.Scanner;
 
 public class ReflectionTest {
     public static void main(String[] args) throws ReflectiveOperationException{
-        //从命令行或者输入读取需要分析的类名
+        /**从命令行或者输入读取需要分析的类名*/
         String name;
         if(args.length>0)
             name = args[0];
@@ -100,7 +104,7 @@ public class ReflectionTest {
                 System.out.print(para[i].getName());
             }
             System.out.println(");");
+
         }
     }
-
 }

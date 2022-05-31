@@ -1,9 +1,10 @@
 package ConstructorAndInitialization;
 
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee extends Person{
+public class Employee extends Person implements Comparable , Cloneable{
     /**Employee对象的实例域*/
    // private String name;
     private double salary;
@@ -65,7 +66,7 @@ public class Employee extends Person{
 
     public boolean equals(Object otherObject){
         if(this == otherObject)
-            return true;
+            return true;                    
         else if(otherObject == null)
             return false;
         else if(getClass()!=otherObject.getClass())
@@ -77,5 +78,20 @@ public class Employee extends Person{
     public int hashCode(){
         return Objects.hash(getName(),salary,hireday);
     }
+    /**实现Comparable接口*/
+    @Override
+    public int compareTo(Object otherObject) {
+       Employee otherEmp  = (Employee) otherObject;
+       return Double.compare(getSalary(), otherEmp.getSalary());
+    }
+
+    /**实现Cloneable接口*/
+    @Override
+    public Employee clone() throws CloneNotSupportedException{
+       return (Employee) super.clone();
+    }
+
+
+
 
 }

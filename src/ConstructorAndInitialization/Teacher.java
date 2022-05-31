@@ -1,10 +1,13 @@
 package ConstructorAndInitialization;
 
+import java.lang.reflect.Method;
+import java.util.Arrays;
+
 public class Teacher {
     private String name;
-   private String major;
-   private int age;
-   private String gender;
+    private String major;
+    private int age;
+    private String gender;
 
     public String getName() {
         return name;
@@ -47,6 +50,24 @@ public class Teacher {
             System.out.println(new ObjectAnalyzer().toString(t));
             System.out.println(new ObjectAnalyzer().toString(new Object()));
             System.out.println(new ObjectAnalyzer().toString(new Employee()));
+            Class cl = Teacher.class;
+            Teacher tt = (Teacher) cl.getConstructor().newInstance();
+            cl.getMethod("setName",String.class).invoke(tt,"Newton");
+            cl.getMethod("setAge",int.class).invoke(tt,18);
+            cl.getMethod("setGender",String.class).invoke(tt,"Male");
+            cl.getMethod("setMajor",String.class).invoke(tt,"Maths");
+            System.out.println(tt);
+
+            Integer.compare(2,3);
+
+
+        }
+    }
+    public String toString() {
+        try {
+            return new ObjectAnalyzer().toString(this);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException(e);
         }
     }
 }

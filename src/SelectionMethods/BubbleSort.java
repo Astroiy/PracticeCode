@@ -6,7 +6,7 @@ public class BubbleSort {
         int n = array.length;
         for(int i=0;i<n-1;i++){
             boolean b = true;
-            for(int j=i;j<n-1;j++){
+            for(int j=0;j<n-i-1;j++){
                 if(array[j]>array[j+1]){
                     var temp = array[j];
                     array[j] = array[j+1];
@@ -21,7 +21,7 @@ public class BubbleSort {
     }
     public static class Test{
         public static void main(String[] args){
-            double[] a = {7,2,6,9,11,8,25};
+            double[] a = {7,12,6,9,11,8,25};
             System.out.println(Arrays.toString(BubbleSort.sort(a)));
         }
     }
