@@ -61,3 +61,14 @@ public class Student extends Person{
         }
     }
 }
+
+class Test{
+    public static void main(String[] args) {
+        Person p = new Employee();
+        try{
+            Manager m = (Manager)p;
+        }catch(RuntimeException e){
+            e.printStackTrace();
+        }
+    }
+}

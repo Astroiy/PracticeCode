@@ -1,7 +1,7 @@
 package AboutInterface;
 
 public interface Person {
-     static String getName(){
+    default String getName(){
          return "";
      }
 }

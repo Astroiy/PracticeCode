@@ -104,7 +104,6 @@ public class ReflectionTest {
                 System.out.print(para[i].getName());
             }
             System.out.println(");");
-
         }
     }
 }

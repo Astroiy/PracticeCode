@@ -10,7 +10,7 @@ public class ReturnStudentInformation {
         for(String[] student : info) {
             student[0] = nameCreator.getName();
             student[1] = String.valueOf(rand.nextInt(17, 20));
-            student[2] = student[0].substring(student[0].length() - 1, student[0].length());
+            student[2] = student[0].substring(student[0].length() - 1);
         }
         return info;
     }

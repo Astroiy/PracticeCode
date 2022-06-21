@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Random;
 
 public class LambdaTest {
     public static class ArraySortTest {
@@ -13,7 +15,8 @@ public class LambdaTest {
             Arrays.sort(planet);
             System.out.println("Sorted in dictionary order: ");
             System.out.println(Arrays.toString(planet));
-            Arrays.sort(planet_cloned, (first, second) -> first.length() - second.length());
+            Arrays.sort(planet_cloned, Comparator.comparingInt(String::length));
+            //Arrays.sort(planet_cloned, (first, second) -> first.length() - second.length());
             System.out.println("Sorted by length: ");
             System.out.println(Arrays.toString(planet_cloned));
         }
@@ -29,4 +32,18 @@ public class LambdaTest {
             System.exit(0);
         }
     }
+    public static class AnotherTest{
+        public static void main(String[] args) {
+            Random rand = new Random();
+            var integers = new Integer[10];
+            for (int j = 0; j < 10; j++) {
+                integers[j]=rand.nextInt(50);
+            }
+            System.out.println(Arrays.toString(integers));
+            Arrays.sort(integers,(a,b)->b-a);
+            System.out.println(Arrays.toString(integers));
+        }
+    }
 }
+
+
