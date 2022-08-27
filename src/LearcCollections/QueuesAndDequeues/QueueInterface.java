@@ -13,6 +13,7 @@ public class QueueInterface {
         values1.add(5);
         values1.add(6);
         values1.add(7);
+        values1.offer(8);
         System.out.println(values);
         System.out.println(values1);
 

@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Bank{
-    private Lock bankLock = new ReentrantLock();
+    private final Lock bankLock = new ReentrantLock();
     private final double[] accounts;
     public Bank(int n,double initialBalance){
         accounts = new double[n];

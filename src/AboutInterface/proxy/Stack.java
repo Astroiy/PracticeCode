@@ -1,10 +1,8 @@
 package AboutInterface.proxy;
 
 import java.util.LinkedList;
-
 public class Stack<T>{
     private LinkedList<T> storage = new LinkedList<>();
-
     public void push(T t){
         storage.addFirst(t);
     }

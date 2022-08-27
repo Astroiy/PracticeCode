@@ -1,0 +1,2 @@
+className=PropertiesAndData.Patterns.Singleton.Student
+methodName=show

@@ -3,7 +3,7 @@ import java.lang.StringBuilder;
 import java.util.*;
 
 /** A {@code SCMap} object store a list of id-course pair.
- * Student id is of Integer type , and courses attach to him are of TreeSet type.
+ * Patterns.Singleton.Student id is of Integer type , and courses attach to him are of TreeSet type.
  * @author Astroiy
  * @version 1.0.0*/
 public class SCMap {

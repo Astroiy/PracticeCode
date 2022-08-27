@@ -2,6 +2,11 @@ package LearnStream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.IntBinaryOperator;
+import java.util.function.UnaryOperator;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class Filter {
@@ -42,7 +47,7 @@ public class Filter {
 
         System.out.println("\nMapMethod: ");
         System.out.println(list);
-        list.stream().map((d)-> d + d.charAt(0)).forEach(System.out::println);
+        list.stream().map(d-> d + d.charAt(0)).forEach(System.out::println);
 
         System.out.println("\nConcatMethod: ");
         var concat = Stream.concat(list.stream(),new ArrayList<String>(List.of("One","Two","Three")).stream());
