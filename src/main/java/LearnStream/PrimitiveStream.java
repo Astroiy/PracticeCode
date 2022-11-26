@@ -1,5 +1,6 @@
 package LearnStream;
 
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -18,6 +19,7 @@ public class PrimitiveStream {
             System.out.println("正在使用元素:"+e);
         }).mapToDouble(e->e*3.14).forEach(System.out::println);
     }
+
 
     @Test
     public void testGenerate(){
