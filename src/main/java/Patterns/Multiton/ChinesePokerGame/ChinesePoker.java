@@ -4,7 +4,9 @@ import java.util.*;
 
 public class ChinesePoker {
 
-    private static final Pokers cards = new Pokers();
+    private static Pokers cards;
+
+    private static List<Pokers.Poker> landLordTreasure;
 
     private static List<Pokers.Poker> getLandLordTreasure(){
         LinkedList<Pokers.Poker> treasure = new LinkedList<>();
@@ -21,6 +23,14 @@ public class ChinesePoker {
                     player.getPoker(cards);
             }
         }
+    }
+
+    private static void resetPokers(){
+        cards = new Pokers();
+    }
+
+    private static void resetTreasure(){
+        landLordTreasure = getLandLordTreasure();
     }
 
     private static void shuffle(){
@@ -41,12 +51,18 @@ public class ChinesePoker {
             Player p2 = new Player("p2", 20000);
             Player p3 = new Player("p3", 20000);
             System.out.println("----------发牌阶段----------");
+            System.out.println("准备新牌组...");
+            resetPokers();
+            System.out.println("抽取地主牌...");
+            resetTreasure();
             System.out.println("洗牌中...");
-            cards.shuffle();
+            shuffle();
             Thread.sleep(1000);
             System.out.println("发牌中...");
             deal(p1,p2,p3);
             Thread.sleep(1000);
+
+
             System.out.println("p1: "+p1.getOwnPokers());
             System.out.println("p2: "+p2.getOwnPokers());
             System.out.println("p3: "+p3.getOwnPokers());
@@ -59,6 +75,8 @@ public class ChinesePoker {
             System.out.println("p1: "+p1.getOwnPokers());
             System.out.println("p2: "+p2.getOwnPokers());
             System.out.println("p3: "+p3.getOwnPokers());
+
+            System.out.println("展示地主牌:"+landLordTreasure);
         }
         else{
             throw new InputMismatchException("Undefined Operation");

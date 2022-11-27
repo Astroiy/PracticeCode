@@ -1,57 +1,69 @@
 package Patterns.Multiton.ChinesePokerGame;
 
-import java.net.URLDecoder;
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Objects;
+import java.util.Random;
 
 public class Pokers{
-    private final LinkedList<Poker> pokers = new LinkedList<>();
+    private final LinkedList<Poker> pokerList = new LinkedList<>();
 
     public Pokers(){
         for (Colors color : Colors.values()) {
             for (Numbers number : Numbers.values()) {
                 if(number!=Numbers.BLACK_JOKER && number != Numbers.RED_JOKER)
-                    pokers.add(new Poker(color,number));
+                    pokerList.add(new Poker(color, number));
             }
         }
-        pokers.add(new Poker(Colors.HEARTS,Numbers.RED_JOKER));
-        pokers.add(new Poker(Colors.SPADE,Numbers.BLACK_JOKER));
-        Collections.sort(pokers);
+        pokerList.add(Poker.getBlackJoker());
+        pokerList.add(Poker.getRedJoker());
+        Collections.sort(pokerList);
     }
 
-    public Poker getAPoker(boolean random){
-        return random?pokers.pollFirst():pokers.pollLast();
+    public Poker getAPoker(boolean fromTop){
+        return fromTop? pokerList.pollFirst(): pokerList.pollLast();
     }
     public Poker getRandomPoker(){
-        return pokers.remove((int)(Math.random()*pokers.size()));
+        Random rand = new Random();
+        return pokerList.remove(rand.nextInt(pokerList.size()));
     }
 
-    public int RestPokers(){
-        return pokers.size();
+    public int restPokersNum(){
+        return pokerList.size();
     }
 
     public void shuffle(){
-        Collections.shuffle(pokers);
+        Collections.shuffle(pokerList);
     }
     public boolean isEmpty(){
-        return pokers.size()==0;
+        return pokerList.isEmpty();
     }
 
+
+    //Poker的单牌对象
     public static class Poker implements Comparable<Poker>{
-        private Colors color;
-        private Numbers number;
+        private final Colors color;
+        private final Numbers number;
+
 
         private Poker(Colors color, Numbers number){
             this.color=color;
             this.number=number;
         }
 
+        private static Poker getRedJoker(){
+            return new Poker(null, Numbers.RED_JOKER);
+        }
+
+        private static Poker getBlackJoker(){
+            return new Poker(null, Numbers.BLACK_JOKER);
+        }
+
+
         @Override
         public int compareTo(Poker pair) {
-            return (this.number.ordinal()-pair.number.ordinal())==0
-                    ?this.color.ordinal()-pair.color.ordinal()
-                    :(this.number.ordinal()-pair.number.ordinal());
+            return number.compareTo(pair.number)==0
+                    ? color.compareTo(pair.color)
+                    :number.compareTo(pair.number);
         }
 
         @Override
@@ -59,7 +71,32 @@ public class Pokers{
             return number==Numbers.BLACK_JOKER || number==Numbers.RED_JOKER
                     ?number.abbreviation: color.design+number.abbreviation;
         }
+
+        //与compareTo相适配的equals方法
+        @Override
+        public boolean equals(Object obj) {
+            if(obj == this){
+                return true;
+            }
+            if(obj == null){
+                return false;
+            }
+            if(getClass()!=obj.getClass()){
+                return false;
+            }
+            int result = compareTo((Poker) obj);
+            return result == 0;
+        }
+
+        @Override
+        public int hashCode() {
+
+            return color==null?number.hashCode()*3:number.hashCode()*3+color.hashCode()*5;
+        }
+
     }
+
+    //花色枚举类
     private enum Colors{
         SPADE("♢"),HEARTS("♧"),CLUB("♥"),DIAMOND("♠");
         private final String design;
@@ -75,11 +112,13 @@ public class Pokers{
         }
     }
 
+
+    //牌数枚举类
     private enum Numbers{
         THREE("3"),FOUR("4"),FIVE("5"),SIX("6"),SEVEN("7"),EIGHT("8"),NIGHT("9"),TEN("10"),KNIGHT("J"),QUEEN("Q"),
         KING("K"),
-        ACE("A"),
-        RED_JOKER("RedJoker"),BLACK_JOKER("BlackJoker");
+        ACE("A"),TWO("2"),
+        BLACK_JOKER("BlackJoker"),RED_JOKER("RedJoker");
         private final String abbreviation;
         Numbers(String abbreviation){
             this.abbreviation=abbreviation;
@@ -96,7 +135,7 @@ public class Pokers{
 
     @Override
     public String toString() {
-        return pokers.toString();
+        return pokerList.toString();
     }
 }
 

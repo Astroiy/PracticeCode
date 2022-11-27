@@ -9,7 +9,7 @@ public class Player {
     private final LinkedList<Pokers.Poker> ownPokers = new LinkedList<>();
     private final String name;
     private Integer joyBeans;
-    private boolean identity = false;
+    private boolean isLandLord = false;
 
     public Player(String name,Integer joyBeans){
         this.name = name;
@@ -17,16 +17,17 @@ public class Player {
     }
 
     public void getLandLord(){
-        identity=true;
+        isLandLord =true;
     }
 
     public boolean isLandlord(){
-        return identity;
+        return isLandLord;
     }
 
     public void sortPoker(){
         Collections.sort(ownPokers);
     }
+
     public void getPoker(Pokers pokers){
         ownPokers.add(pokers.getAPoker(true));
     }
@@ -36,6 +37,7 @@ public class Player {
         for (int i : index) {
             pokers.add(ownPokers.remove(i));
         }
+        Collections.sort(pokers);
         return pokers;
     }
 
