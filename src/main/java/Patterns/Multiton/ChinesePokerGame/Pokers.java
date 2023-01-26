@@ -1,5 +1,6 @@
 package Patterns.Multiton.ChinesePokerGame;
 
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
@@ -46,6 +47,9 @@ public class Pokers{
 
 
         private Poker(Colors color, Numbers number){
+            if(number.equals(Numbers.RED_JOKER) || number.equals(Numbers.BLACK_JOKER)){
+                throw new IllegalArgumentException("不能使用构造器构造大小王");
+            }
             this.color=color;
             this.number=number;
         }
