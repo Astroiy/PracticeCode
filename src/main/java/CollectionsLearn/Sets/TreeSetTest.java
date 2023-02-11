@@ -1,6 +1,5 @@
-package LearcCollections.Sets;
+package CollectionsLearn.Sets;
 
-import javax.swing.*;
 import java.util.*;
 
 public class TreeSetTest {

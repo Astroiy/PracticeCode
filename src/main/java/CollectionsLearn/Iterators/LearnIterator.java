@@ -1,4 +1,4 @@
-package LearcCollections.Iterators;
+package CollectionsLearn.Iterators;
 
 import java.util.ArrayList;
 

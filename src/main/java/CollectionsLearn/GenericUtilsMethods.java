@@ -1,9 +1,6 @@
-package LearcCollections;
+package CollectionsLearn;
 
-import java.util.AbstractCollection;
-import java.util.AbstractQueue;
 import java.util.Collection;
-import java.util.Objects;
 
 public class GenericUtilsMethods {
     public static <E> boolean contains(Collection<E> e, Object obj){

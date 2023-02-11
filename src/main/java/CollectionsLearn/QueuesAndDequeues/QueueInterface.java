@@ -1,4 +1,4 @@
-package LearcCollections.QueuesAndDequeues;
+package CollectionsLearn.QueuesAndDequeues;
 
 import java.util.*;
 

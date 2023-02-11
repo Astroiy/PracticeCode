@@ -1,6 +1,5 @@
-package LearcCollections.Sets;
+package CollectionsLearn.Sets;
 
-import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 

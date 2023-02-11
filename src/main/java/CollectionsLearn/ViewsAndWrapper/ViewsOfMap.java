@@ -1,8 +1,6 @@
-package LearcCollections.ViewsAndWrapper;
+package CollectionsLearn.ViewsAndWrapper;
 
-import java.util.EnumSet;
 import java.util.HashMap;
-import java.util.Map;
 
 public class ViewsOfMap {
     public static void main(String[] args) {

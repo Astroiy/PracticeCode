@@ -1,4 +1,4 @@
-package LearcCollections.Lists;
+package CollectionsLearn.Lists;
 import java.util.*;
 public class ConcurrentModificationsExceptions {
     public static void main(String[] args) {

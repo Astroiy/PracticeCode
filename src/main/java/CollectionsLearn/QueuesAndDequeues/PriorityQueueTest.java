@@ -1,4 +1,4 @@
-package LearcCollections.QueuesAndDequeues;
+package CollectionsLearn.QueuesAndDequeues;
 
 import java.time.LocalDate;
 import java.util.PriorityQueue;

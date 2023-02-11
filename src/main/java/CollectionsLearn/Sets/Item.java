@@ -1,4 +1,4 @@
-package LearcCollections.Sets;
+package CollectionsLearn.Sets;
 
 import java.util.Objects;
 

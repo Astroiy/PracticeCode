@@ -1,6 +1,5 @@
-package LearcCollections.MapsAndProperties;
+package CollectionsLearn.MapsAndProperties;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 

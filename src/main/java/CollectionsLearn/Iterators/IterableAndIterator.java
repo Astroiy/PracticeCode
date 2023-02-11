@@ -1,10 +1,8 @@
-package LearcCollections.Iterators;
+package CollectionsLearn.Iterators;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class IterableAndIterator {
     public static class TestForEach {

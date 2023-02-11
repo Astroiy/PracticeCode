@@ -1,9 +1,8 @@
-package LearcCollections;
+package CollectionsLearn;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.SortedMap;
 
 public class CollectionMethods {
     public static void main(String[] args) {

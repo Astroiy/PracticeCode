@@ -1,4 +1,4 @@
-package LearcCollections.Sets;
+package CollectionsLearn.Sets;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

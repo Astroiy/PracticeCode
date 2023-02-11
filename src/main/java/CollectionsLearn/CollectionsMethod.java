@@ -1,4 +1,4 @@
-package LearcCollections;
+package CollectionsLearn;
 
 import java.util.*;
 
