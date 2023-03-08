@@ -18,6 +18,15 @@ public class ParallelStream {
         Stream<String> stream = numbers.parallelStream();
         List<String> collect = stream.sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         System.out.println(collect);
+
+        List<Integer> integers = List.of(1, 3, 2, 5, 4, 7, 88, -1);
+        List<Integer> list = integers.stream().parallel().sorted().collect(Collectors.toList());
+        System.out.println(list);
+        //无需流
+        List<Integer> list1 = integers.stream().parallel().unordered().collect(Collectors.toList());
+        System.out.println(list1);
+        CharSequence
+
     }
 
     @Test
