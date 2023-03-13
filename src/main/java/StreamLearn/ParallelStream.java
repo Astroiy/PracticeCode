@@ -25,7 +25,6 @@ public class ParallelStream {
         //无需流
         List<Integer> list1 = integers.stream().parallel().unordered().collect(Collectors.toList());
         System.out.println(list1);
-        CharSequence
 
     }
 
