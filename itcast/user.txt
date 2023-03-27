@@ -1,2 +1,4 @@
-username=zhangsan
-password=123
+username1=zhangsan username2=lisi
+password1=123 password2=321
+email1=shiaoiwh@163.com email2=wdsawd@163.com
+address1=18wqodui1nw address2=miaomiao
