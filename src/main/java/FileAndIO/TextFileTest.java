@@ -2,6 +2,7 @@ package FileAndIO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -62,7 +63,8 @@ public class TextFileTest {
 
     @Data
     @AllArgsConstructor
-    private static class Employee {
+    @NoArgsConstructor
+    public static class Employee {
         private String name;
         private Double salary;
         private LocalDate date;

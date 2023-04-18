@@ -47,4 +47,10 @@ public class LearnFileInputOutputStream {
        pushbackInputStream.close();
 
     }
+
+    private static class DataInputAndOutput{
+        public static void main(String[] args) {
+
+        }
+    }
 }
